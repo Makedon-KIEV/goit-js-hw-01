@@ -1,7 +1,13 @@
-const start = 3;
-const end = 7;
+function filterArray(numbers, value) {
+  // Change code below this line
+  let filteredNumbers = [];
 
-for (let i = ; i <= ; i += ) { // Change this line
-  console.log(i);
+  for (let i of numbers) {
+
+    if (numbers > value) {
+      filteredNumbers.push(numbers);
+    }
+  }
+  return filteredNumbers;
+  // Change code above this line
 }
-цуацуауцауцацуа
