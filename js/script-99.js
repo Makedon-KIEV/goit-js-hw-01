@@ -1,13 +1,12 @@
-function filterArray(numbers, value) {
-  // Change code below this line
-  let filteredNumbers = [];
+// Колбэк-функция
+function greet(name) {
+  consle.log(`Добро пожаловать ${name}.`);
+}
 
-  for (let i of numbers) {
+// Функция высшего порядка
+function registerGuest(name, callback) {
+  console.log(`Регистрируем гостя ${name}.`);
+  callback(name);
+}
 
-    if (numbers > value) {
-      filteredNumbers.push(numbers);
-    }
-  }
-  return filteredNumbers;
-  // Change code above this line
-}веревирпшгпгшпшпшнпгшншагнiuhiugiugrgrggrgrгрггвпцп
+registerGuest("Манго", greet);
