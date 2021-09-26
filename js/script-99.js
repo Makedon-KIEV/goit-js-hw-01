@@ -1,12 +1,14 @@
-// Колбэк-функция
-function greet(name) {
-  consle.log(`Добро пожаловать ${name}.`);
+function processCall(recipient) {
+  // Имитируем доступность абонента случайным числом
+  const isRecipientAvailable = Math.random() > 0.5;
+
+  if (!isRecipientAvailable) {
+    console.log(`Абонент ${recipient} недоступен, оставьте сообщение.`);
+    // Логика активации автоответчика
+  } else {
+    console.log(`Соединяем с ${recipient}, ожидайте...`);
+    // Логика принятия звонка
+  }
 }
 
-// Функция высшего порядка
-function registerGuest(name, callback) {
-  console.log(`Регистрируем гостя ${name}.`);
-  callback(name);
-}
-
-registerGuest("Манго", greet);
+processCall("Манго");
