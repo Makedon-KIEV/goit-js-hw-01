@@ -1,11 +1,4 @@
-const numbers = [5, 10, 15, 20, 25];
-
-// Объявление функции
-numbers.forEach(function (number, index) {
-  console.log(`Индекс ${index}, значение ${number}`);
-});
-
-// Анонимная стрелочная функция
-numbers.forEach((number, index) => {
-  console.log(`Индекс ${index}, значение ${number}`);
-});
+// Декларативный подход
+const numbers = [1, 2, 3, 4, 5];
+const filteredNumbers = numbers.filter(value => value > 3);
+console.log(filteredNumbers); // [4, 5]
