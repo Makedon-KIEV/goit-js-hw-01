@@ -4,3 +4,13 @@ const students = [
   { name: "Аякс", score: 37, courses: ["физика", "биология"] },
   { name: "Киви", score: 94, courses: ["литература", "информатика"] },
 ];
+const sortedByAscendingScore = [...students].sort((a, b) => a.score - b.score);
+const names = sortedByAscendingScore.map(student => student.name);
+
+console.log(names); // ['Аякс', 'Поли', 'Манго', 'Киви']
+
+const names = [...students]
+  .sort((a, b) => a.score - b.score)
+  .map(student => student.name);
+
+console.log(names); // ['Аякс', 'Поли', 'Манго', 'Киви']
