@@ -4,13 +4,20 @@ const students = [
   { name: "Аякс", score: 37, courses: ["физика", "биология"] },
   { name: "Киви", score: 94, courses: ["литература", "информатика"] },
 ];
-const sortedByAscendingScore = [...students].sort((a, b) => a.score - b.score);
-const names = sortedByAscendingScore.map(student => student.name);
+// const sortedByAscendingScore = [...students].sort((a, b) => a.score - b.score);
+// const names = sortedByAscendingScore.map(student => student.name);
 
-console.log(names); // ['Аякс', 'Поли', 'Манго', 'Киви']
+// console.log(names); // ['Аякс', 'Поли', 'Манго', 'Киви']
 
 const names = [...students]
   .sort((a, b) => a.score - b.score)
   .map(student => student.name);
 
 console.log(names); // ['Аякс', 'Поли', 'Манго', 'Киви']
+
+const uniqueSortedCourses = students
+  .flatMap(student => student.courses)
+  .filter((course, index, array) => array.indexOf(course) === index)
+  .sort((a, b) => a.localeCompare(b));
+
+console.log(uniqueSortedCourses); // ['биология', 'информатика', 'литература', 'математика', 'физика']
