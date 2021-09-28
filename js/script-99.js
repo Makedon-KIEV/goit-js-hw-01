@@ -1,17 +1,14 @@
-const pureMultiply = (array, value) => {
-  const newArray = [];
+const students = [
+  { name: "Манго", score: 83 },
+  { name: "Поли", score: 59 },
+  { name: "Аякс", score: 37 },
+  { name: "Киви", score: 94 },
+  { name: "Хьюстон", score: 64 },
+];
 
-  array.forEach(element => {
-    newArray.push(element * value);
-  });
+// Название аккумулятора может быть произвольным, это просто параметр функции
+const totalScore = students.reduce((total, student) => {
+  return total + student.score;
+}, 0);
 
-  return newArray;
-};
-
-const numbers = [1, 2, 3, 4, 5];
-const doubledNumbers = pureMultiply(numbers, 2);
-
-// Не произошло мутации исходных данных
-console.log(numbers); // [1, 2, 3, 4, 5]
-// Функция вернула новый массив с изменёнными данными
-console.log(doubledNumbers); // [2, 4, 6, 8, 10]
+const averageScore = totalScore / students.length;
