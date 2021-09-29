@@ -1,18 +1,14 @@
-function greet(clientName) {
-  return `${clientName}, добро пожаловать в «${this.service}».`;
+const customer = {
+  firstName: "Jacob",
+  lastName: "Mercer",
+  getFullName() {
+    return `${this.firstName} ${this.lastName}`;
+  },
+};
+
+function makeMessage(callback) {
+  // callback() это вызов метода getFullName без объекта
+  console.log(`Обрабатываем заявку от ${callback()}.`);
 }
 
-const steam = {
-  service: "Steam",
-};
-const steamGreeter = greet.bind(steam);
-hotelGreeter("Манго"); // "Манго, добро пожаловать в «Steam»."
-
-const gmail = {
-  service: "Gmail",
-};
-const gmailGreeter = greet.bind(gmail);
-gmailGreeter("Поли"); // "Поли, добро пожаловать в «Gmail»."
-console.log(this)
-console.log(gmailGreeter)
-
+makeMessage(customer.getFullName); // Будет ошибка при вызове функции
