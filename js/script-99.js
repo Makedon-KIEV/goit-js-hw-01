@@ -1,13 +1,15 @@
-function greetGuest(greeting) {
-  console.log(`${greeting}, ${this.username}.`);
+function greet(clientName) {
+  return `${clientName}, добро пожаловать в «${this.service}».`;
 }
 
-const mango = {
-  username: "Манго",
+const steam = {
+  service: "Steam",
 };
-const poly = {
-  username: "Поли",
-};
+const steamGreeter = greet.bind(steam);
+hotelGreeter("Манго"); // "Манго, добро пожаловать в «Steam»."
 
-greetGuest.apply(mango, ["Добро пожаловать"]); // Добро пожаловать, Манго.
-greetGuest.apply(poly, ["С приездом"]); // С приездом, Поли.
+const gmail = {
+  service: "Gmail",
+};
+const gmailGreeter = greet.bind(gmail);
+gmailGreeter("Поли"); // "Поли, добро пожаловать в «Gmail»."
