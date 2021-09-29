@@ -13,3 +13,6 @@ const gmail = {
 };
 const gmailGreeter = greet.bind(gmail);
 gmailGreeter("Поли"); // "Поли, добро пожаловать в «Gmail»."
+console.log(this)
+console.log(gmailGreeter)
+
