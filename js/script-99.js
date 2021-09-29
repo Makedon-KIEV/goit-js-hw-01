@@ -9,5 +9,5 @@ const poly = {
   username: "Поли",
 };
 
-greetGuest.call(mango, "Добро пожаловать"); // Добро пожаловать, Манго.
-greetGuest.call(poly, "С приездом"); // С приездом, Поли.
+greetGuest.apply(mango, ["Добро пожаловать"]); // Добро пожаловать, Манго.
+greetGuest.apply(poly, ["С приездом"]); // С приездом, Поли.
