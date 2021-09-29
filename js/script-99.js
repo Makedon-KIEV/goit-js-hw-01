@@ -1,23 +1,17 @@
-const students = [
-  { name: "Манго", score: 83, courses: ["математика", "физика"] },
-  { name: "Поли", score: 59, courses: ["информатика", "математика"] },
-  { name: "Аякс", score: 37, courses: ["физика", "биология"] },
-  { name: "Киви", score: 94, courses: ["литература", "информатика"] },
-];
-// const sortedByAscendingScore = [...students].sort((a, b) => a.score - b.score);
-// const names = sortedByAscendingScore.map(student => student.name);
+const hotel = {
+  username: "Resort hotel",
+  showThis() {
+    const foo = () => {
+      // Стрелки запоминают контекст во время объявления,
+      // из родительской области видимости
+      console.log("this in foo: ", this);
+    };
 
-// console.log(names); // ['Аякс', 'Поли', 'Манго', 'Киви']
+    foo();
+    console.log("this in showThis: ", this);
+  },
+};
 
-const names = [...students]
-  .sort((a, b) => a.score - b.score)
-  .map(student => student.name);
-
-console.log(names); // ['Аякс', 'Поли', 'Манго', 'Киви']
-
-const uniqueSortedCourses = students
-  .flatMap(student => student.courses)
-  .filter((course, index, array) => array.indexOf(course) === index)
-  .sort((a, b) => a.localeCompare(b));
-
-console.log(uniqueSortedCourses); // ['биология', 'информатика', 'литература', 'математика', 'физика']
+hotel.showThis();
+// this in foo: {username: 'Resort hotel', showThis: ƒ}
+// this in showThis: {username: 'Resort hotel',showThis: ƒ}
