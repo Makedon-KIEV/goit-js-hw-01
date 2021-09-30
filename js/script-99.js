@@ -1,14 +1,12 @@
-const customer = {
-  firstName: "Jacob",
-  lastName: "Mercer",
-  getFullName() {
-    return `${this.firstName} ${this.lastName}`;
+const employee = {
+  baseSalary: 30000,
+  overtime: 10,
+  rate: 20,
+  getWage() {
+    return this.baseSalary + this.overtime * this.rate;
   },
 };
 
-function makeMessage(callback) {
-  // callback() это вызов метода getFullName без объекта
-  console.log(`Обрабатываем заявку от ${callback()}.`);
-}
-
-makeMessage(customer.getFullName); // Будет ошибка при вызове функции
+employee.getWage();
+console.log(this)
+console.log(globalThis)
