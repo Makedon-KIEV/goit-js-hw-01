@@ -1,12 +1,8 @@
-const employee = {
-  baseSalary: 30000,
-  overtime: 10,
-  rate: 20,
-  getWage() {
-    return this.baseSalary + this.overtime * this.rate;
-  },
+const animal = {
+  legs: 4,
 };
+const dog = Object.create(animal);
+dog.name = "Манго";
 
-employee.getWage();
-console.log(this)
-console.log(globalThis)
+console.log(dog); // { name: 'Манго', __proto__: animal }
+console.log(animal.isPrototypeOf(dog)); // true
