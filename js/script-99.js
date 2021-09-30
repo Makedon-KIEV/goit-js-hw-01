@@ -1,8 +1,7 @@
-const animal = {
-  legs: 4,
-};
+const animal = { eats: true };
 const dog = Object.create(animal);
-dog.name = "Манго";
+dog.barks = true;
 
-console.log(dog); // { name: 'Манго', __proto__: animal }
-console.log(animal.isPrototypeOf(dog)); // true
+for (const key in dog) {
+  console.log(key); // barks, eats
+}
