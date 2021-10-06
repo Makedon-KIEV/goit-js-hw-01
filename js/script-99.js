@@ -14,6 +14,6 @@ console.log(mango); // { name: "Манго", email: "mango@mail.com" }
 
 const poly = new User({
   name: "Поли",
-  email: "poly@mail.coввm",
+  email: "poly@mail.coвв22m",
 });
 console.log(poly); // { name: "Поли", email: "poly@mail.com" }
